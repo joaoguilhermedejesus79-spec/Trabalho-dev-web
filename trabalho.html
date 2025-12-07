@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kanban</title>
+    <link rel="stylesheet" href="css/trabalho.css" />
+</head>
+<body>
+
+    <!-- CABEÇALHO -->
+    <header>
+        <h1>Kanban</h1>
+        <button id="nova_tarefa">Adicionar Tarefa</button>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="principal">
+        <div class="coluna" data-status="todo">
+            <h2>Para Fazer</h2>
+            <div class="fazer"></div>
+        </div>
+        <div class="coluna" data-status="doing">
+            <h2>Fazendo</h2>
+            <div class="fazendo"></div>
+        </div>
+        <div class="coluna" data-status="done">
+            <h2>Feito</h2>
+            <div class="feito"></div>
+        </div>
+    </main>
+
+    <!-- CADASTRO -->
+    <div id="cadastro" class="cadastro_tarefas">
+        <div class="novas_tarefas">
+            <span id="span2" class="close">&times;</span>
+            <h3 id="titulo_tarefa">Nova Tarefa</h3>
+            <form id="form_nova_tarefa">
+                <input type="hidden" id="abrir" />
+                
+                <label for="nome_tarefa">Título:</label>
+                <input type="text" id="nome_tarefa" required maxlength="60" />
+                
+                <label for="descricao_tarefa">Descrição:</label>
+                <textarea id="descricao_tarefa" required maxlength="120"></textarea>
+                
+                <label for="prioridade_tarefa">Prioridade:</label>
+                <select id="prioridade_tarefa" required>
+                    <option value="low">Baixa</option>
+                    <option value="medium">Média</option>
+                    <option value="high">Alta</option>
+                </select>
+
+                <label for="data_tarefa">Data Limite:</label>
+                <input type="date" id="data_tarefa" />
+
+                <button type="submit" id="salvar">Salvar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/trabalho.js"></script>
+</body>
+</html>
